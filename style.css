@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  
+html, body {
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  min-height: 100vh; /* Ajuste para que o conteúdo ocupe toda a altura da viewport */
+  position: relative;
+  z-index: 1; /* Garante que o conteúdo fique acima do vídeo */
+}
+  
+/* Header */
+header {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+.navigation {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  column-gap: 48px;
+}
+.navigation_link {
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  position: relative;
+}
+
+.navigation_link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 60%;
+  height: 1px;
+  background: var(--red);
+}
+
+.navigation_link:hover {
+  color: var(--red);
+}
+.social {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.icons {
+  width: 70px;
+  height: 20px;
+  opacity: 0.6;
+  transition: all 0.4s;
+}
+
+.icons:hover {
+  opacity: 1;
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+/*main */
+main {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  justify-content: center;
+}
+main h1 {
+  font-size: 40px;
+  color: #282829;
+  animation: slideDown 1.5s ease-out, glow 1.5s ease-in-out infinite alternate;
+}
+
+main p {
+  font-size: 20px;
+  color: #ccc;
+  margin-top: 10px;
+  animation: fadeInUp 2s ease-out;
+}
+.logo {
+  width: 75px;
+  height: 75px;
+}
+
+.logo:hover {
+  animation: rotateIn 1s 1;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+/* card */
+.characters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: #333;
+  border-radius: 8px;
+  margin: 15px;
+  padding: 15px;
+  text-align: center;
+  width: 180px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.card:nth-child(odd) {
+  animation-delay: 0.5s;
+}
+.card:nth-child(even) {
+  animation-delay: 1s;
+}
+
+.card:hover {
+  transform: scale(1.5) rotate(5deg);
+  box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.7);
+}
+
+/*Card Image Animation */
+.card img {
+  border-radius: 5px;
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s;
+  animation: rotateIn 2s ease-in 1;
+  
+}
+
+.card img:hover {
+  transform: rotateY(180deg) scale(1.1);
+  transition: all 0.4s;
+}
+
+.card h2 {
+  font-size: 1.4rem;
+  color: #FFD700;
+  margin: 10px 0;
+}
+
+.card p {
+  color: #bbb;
+  font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #666;
+  animation: fadeInUp 2s ease-out;
+}
+
+/* Keyframes */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700;
+  }
+  100% {
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    transform: rotateY(360deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
+
+.background-video {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  width: 100vw; 
+  height: 100vh; 
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.background-video::after {
+  content: '';
+  width: inherit;
+  height: inherit;
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(109deg, rgba(10, 12, 16, 0.98) 15%, rgba(10, 12, 16, 0.5) 50%, rgba(10, 12, 16, 0.99) 85%);
+}
+
+#imagem-main {
+  width: 200px;
+  height: 200px;
+  border: ipx solid yellow;
+  border-radius: 100%;
+  margin-left: auto;
+}
