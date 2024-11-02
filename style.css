@@ -16,6 +16,18 @@ html, body {
   position: relative;
   z-index: 1; /* Garante que o conteúdo fique acima do vídeo */
 }
+
+.img-silhueta {
+  width: 30vw;
+  height: 70vh;
+  animation: slideDown 1.5s ease-out
+}
+
+.titulo-logo {
+  width: 40vw;
+  height: 20vh;
+  animation: slideDown 1.5s ease-out
+}
   
 /* Header */
 header {
@@ -37,6 +49,7 @@ header {
   text-transform: uppercase;
 
   position: relative;
+  animation: fadeInUp 2s ease-out;
 }
 
 .navigation_link::after {
@@ -46,23 +59,35 @@ header {
   bottom: -2px;
   width: 60%;
   height: 1px;
-  background: var(--red);
+  background: red;
+
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s;
 }
 
 .navigation_link:hover {
-  color: var(--red);
+  color: red;
+  cursor: pointer;
+}
+.navigation_link:hover::after{
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.4s;
 }
 .social {
   margin-left: auto;
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  column-gap: 5px;
+  animation: fadeInUp 2s ease-out;
 }
 .icons {
   width: 70px;
   height: 20px;
   opacity: 0.6;
-  transition: all 0.4s;
+  transition: all 0.3s;
+  animation: fadeInUp 2s ease-out;
 }
 
 .icons:hover {
@@ -76,30 +101,54 @@ main {
   width: 100%;
   padding: 20px;
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
-main h1 {
-  font-size: 40px;
-  color: #282829;
+main h2 {
+  font-size: 30px;
+  color: #0f00e0;
   animation: slideDown 1.5s ease-out, glow 1.5s ease-in-out infinite alternate;
+  align-self: inherit;
 }
 
-main p {
-  font-size: 20px;
-  color: #ccc;
-  margin-top: 10px;
-  animation: fadeInUp 2s ease-out;
+.sinopse {
+  font-size: 18px;
+  color: #ffffff;
+  animation: slideDown 1.5s ease-out;
+  transition: all 0.3s ease
+}
+
+.sinopse:hover span {
+  color: #FFD700; /* Cor do destaque */
+  font-weight: bold; /* Deixa o texto mais visível */
+  text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700; /* Adiciona brilho */
+}
+
+.sinopse span {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.conteudo-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Alinha o conteúdo ao centro */
+}
+
+.conteudo-main h2,
+.conteudo-main .sinopse {
+  margin-bottom: 15px; /* Ajusta o espaçamento entre o título e o texto */
 }
 .logo {
   width: 75px;
   height: 75px;
+  margin-right: 30px;
+  animation: fadeInUp 2s ease-out;
 }
 
 .logo:hover {
-  animation: rotateIn 1s 1;
-  transition: all 0.4s;
+  animation: rotateIn 2s 1;
+  transition: all 0.5s;
   cursor: pointer;
 }
 
@@ -185,10 +234,10 @@ footer {
 
 @keyframes glow {
   0% {
-    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700;
+    text-shadow: 0 0 5px #09ff00, 0 0 10px #09ff00, 0 0 15px #09ff00;
   }
   100% {
-    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+    text-shadow: 0 0 10px #eeff00, 0 0 20px #eeff00, 0 0 30px #eeff00;
   }
 }
 
@@ -253,3 +302,27 @@ footer {
   border-radius: 100%;
   margin-left: auto;
 }
+
+
+.img-silhueta {
+  width: 30vw;
+  height: 70vh;
+  transition: transform 0.3s ease-in-out; /* Suaviza o efeito */
+}
+
+.img-silhueta:hover {
+  animation: pulse 1s infinite; /* Aplica a animação ao hover */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* Tamanho normal */
+  }
+  50% {
+    transform: scale(1.1); /* Expande levemente */
+  }
+  100% {
+    transform: scale(1); /* Retorna ao tamanho original */
+  }
+}
+
