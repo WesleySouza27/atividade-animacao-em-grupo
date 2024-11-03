@@ -12,9 +12,9 @@ html, body {
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
-  min-height: 100vh; /* Ajuste para que o conteúdo ocupe toda a altura da viewport */
+  min-height: 100vh;
   position: relative;
-  z-index: 1; /* Garante que o conteúdo fique acima do vídeo */
+  z-index: 1; 
 }
 
 .img-silhueta {
@@ -24,24 +24,41 @@ html, body {
 }
 
 .titulo-logo {
-  width: 40vw;
-  height: 20vh;
-  animation: slideDown 1.5s ease-out
+  max-width: 30vw; 
+  height: auto; 
+  margin-left: 30px;
+  padding: 5px; 
+  border-radius: 8px; 
+  animation: slideDown 1.5s ease-out;
+  margin-left: 20px; 
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
 }
-  
-/* Header */
+
 header {
   width: 100%;
   padding: 20px;
   display: flex;
   align-items: center;
 }
+
+#story-link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#story-link:hover {
+  color: red;
+  cursor: pointer;
+}
+
 .navigation {
   display: flex;
   align-items: center;
   list-style: none;
   column-gap: 48px;
 }
+
 .navigation_link {
   font-size: 14px;
   font-weight: 300;
@@ -75,6 +92,7 @@ header {
   transform-origin: left;
   transition: transform 0.4s;
 }
+
 .social {
   margin-left: auto;
   display: flex;
@@ -82,6 +100,7 @@ header {
   column-gap: 5px;
   animation: fadeInUp 2s ease-out;
 }
+
 .icons {
   width: 70px;
   height: 20px;
@@ -96,7 +115,6 @@ header {
   cursor: pointer;
 }
 
-/*main */
 main {
   width: 100%;
   padding: 20px;
@@ -112,32 +130,53 @@ main h2 {
 }
 
 .sinopse {
-  font-size: 18px;
+  font-size: 20px;
   color: #ffffff;
   animation: slideDown 1.5s ease-out;
-  transition: all 0.3s ease
+  transition: all 0.3s ease;
+  text-align: justify;
+  margin: 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .sinopse:hover span {
-  color: #FFD700; /* Cor do destaque */
-  font-weight: bold; /* Deixa o texto mais visível */
-  text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700; /* Adiciona brilho */
+  color: #FF0000;
+  font-weight: bold;
+  text-shadow: 0 0 5px #FF0000, 0 0 10px #0000FF;
 }
 
 .sinopse span {
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .sinopse {
+    font-size: 14px; /* Diminui o tamanho da fonte para telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .sinopse {
+    font-size: 12px; /* Diminui ainda mais para telas muito pequenas */
+  }
+}
+
 .conteudo-main {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center; /* Alinha o conteúdo ao centro */
+  text-align: center;
+  padding: 20px;
+  z-index: 1;
 }
 
 .conteudo-main h2,
 .conteudo-main .sinopse {
-  margin-bottom: 15px; /* Ajusta o espaçamento entre o título e o texto */
+  margin-bottom: 15px;
 }
 .logo {
   width: 75px;
@@ -214,6 +253,7 @@ main h2 {
 /* Footer */
 footer {
   margin-top: 30px;
+  margin-bottom: 20px;
   text-align: center;
   font-size: 0.8rem;
   color: #666;
@@ -234,10 +274,10 @@ footer {
 
 @keyframes glow {
   0% {
-    text-shadow: 0 0 5px #09ff00, 0 0 10px #09ff00, 0 0 15px #09ff00;
+    text-shadow: 0 0 5px #daa520, 0 0 10px #daa520, 0 0 15px #daa520;
   }
   100% {
-    text-shadow: 0 0 10px #eeff00, 0 0 20px #eeff00, 0 0 30px #eeff00;
+    text-shadow: 0 0 10px #daa520, 0 0 20px #daa520, 0 0 30px #daa520;
   }
 }
 
@@ -307,22 +347,32 @@ footer {
 .img-silhueta {
   width: 30vw;
   height: 70vh;
-  transition: transform 0.3s ease-in-out; /* Suaviza o efeito */
+  transition: transform 0.3s ease-in-out; 
 }
 
 .img-silhueta:hover {
-  animation: pulse 1s infinite; /* Aplica a animação ao hover */
+  animation: pulse 1s infinite;
+}
+
+#data-lancamento {
+  font-family: "Michroma", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+  margin-top: 30px;
+  font-size: 32px;
+  animation: glow 1.5s ease-in-out infinite alternate;
 }
 
 @keyframes pulse {
   0% {
-    transform: scale(1); /* Tamanho normal */
+    transform: scale(1);
   }
   50% {
-    transform: scale(1.1); /* Expande levemente */
+    transform: scale(1.1);
   }
   100% {
-    transform: scale(1); /* Retorna ao tamanho original */
+    transform: scale(1);
   }
 }
-

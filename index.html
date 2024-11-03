@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homen aranha sem volta pra casa</title>
+  <title>Homem-Aranha: Sem Volta para Casa</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Rubik+Glitch&family=Zen+Dots&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Glitch&family=Zen+Dots&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="background-video">
-    <video autoplay muted loop >
+    <video autoplay muted loop>
       <source src="assets/backgroundVideo.mp4" type="video/mp4">
     </video>
   </div>
@@ -19,7 +22,7 @@
 
     <ul class="navigation">
       <li class="navigation_link">Home</li>
-      <li class="navigation_link">Story</li>
+      <li class="navigation_link"><a id="story-link" href="story/story.html">Story</a></li>
       <li class="navigation_link">Trailer</li>
     </ul>
     <div class="social">
@@ -30,17 +33,12 @@
     </div>
   </header>
 
-  <section>
-    <img class="titulo-logo" src="assets/hd-spider-man-no-way-home-logo-1 (1).png" alt="logo-homen-aranha-nome">
-  </section>
-
   <main>
-    <!-- <h1>Homen aranha sem volta pra casa</h1> -->
-     <!-- <p>Explorando o universo com coragem e estilo</p> -->
     <div class="conteudo-main">
-      <pre class="sinopse">
-        <h2>Homem-Aranha: Sem Volta para Casa.</h2>
       
+      <img class="titulo-logo" src="assets/hd-spider-man-no-way-home-logo-1 (1).png" alt="logo-homem-aranha-nome">
+      
+      <pre class="sinopse">
         <span>Prepare-se para uma aventura épica e inédita no universo Marvel!</span> 
         Em <span>Homem-Aranha: Sem Volta para Casa</span>, Peter Parker enfrenta 
         seu maior desafio até agora, quando sua identidade é revelada 
@@ -56,46 +54,48 @@
         como o Duende Verde, Doutor Octopus e Electro, Sem Volta para Casa 
         é mais do que um filme – é um evento cinematográfico que redefinirá 
         o futuro do herói e do próprio multiverso!
-      
-        <span>Venha para os cinemas e viva essa experiência única e inesquecível!</span>
       </pre>
     </div>
     <div>
-      <img class="img-silhueta" src="assets/test-main.png"  alt="imagem-homen-aranha-solo">
+      <img class="img-silhueta" src="assets/test-main.png" alt="imagem-homem-aranha-solo">
     </div>
   </main>
+
+  <section>
+    <h2 id="data-lancamento">ESTREIA DIA 04/10/24 NOS CINEMAS!</h2>
+  </section>
   
   <section class="characters">
-    <div class="card" id="homens-aranhas3">
-      <img src="./assets/cardCrossover.png" alt="3 homens aranhas crossover">
-      <h2>O melhor corssover</h2>
-      <p>reencotro de milhões</p>
+    <div class="card" id="peter-parker">
+      <img src="./assets/peter-parker.png" alt="Peter Parker">
+      <h2>Peter Parker</h2>
+      <p>O Homem-Aranha de nossa realidade, enfrentando os desafios do multiverso.</p>
     </div>
-    <div class="card" id="gamora">
-      <img src="gamora.jpg" alt="Gamora">
-      <h2>Gamora</h2>
-      <p>A guerreira mais mortal da galáxia.</p>
+    <div class="card" id="doctor-strange">
+      <img src="./assets/doctor-strange.png" alt="Doctor Strange">
+      <h2>Doutor Estranho</h2>
+      <p>O Mago Supremo que ajuda Peter, mas acidentalmente abre portas perigosas no multiverso.</p>
     </div>
-    <div class="card" id="drax">
-      <img src="drax.jpg" alt="Drax">
-      <h2>Drax</h2>
-      <p>Fortaleza física e coração fiel.</p>
+    <div class="card" id="green-goblin">
+      <img src="./assets/green-goblin.png" alt="Duende Verde">
+      <h2>Duende Verde</h2>
+      <p>O perigoso vilão que retorna para confrontar o Homem-Aranha.</p>
     </div>
-    <div class="card" id="rocket">
-      <img src="rocket.jpg" alt="Rocket">
-      <h2>Rocket</h2>
-      <p>O gênio da tecnologia e explosivos.</p>
+    <div class="card" id="doctor-octopus">
+      <img src="./assets/doctor-octopus.png" alt="Doutor Octopus">
+      <h2>Doutor Octopus</h2>
+      <p>Um inimigo formidável com braços mecânicos de uma realidade alternativa.</p>
     </div>
-    <div class="card" id="groot">
-      <img src="groot.jpg" alt="Groot">
-      <h2>Groot</h2>
-      <p>Uma árvore com um coração gigante.</p>
+    <div class="card" id="electro">
+      <img src="./assets/electro.png" alt="Electro">
+      <h2>Electro</h2>
+      <p>Um vilão eletrizante que também entra na batalha contra o Homem-Aranha.</p>
     </div>
   </section>
+  
   
   <footer>
     <p>Wesley | Luiz | Andreza &copy; 2024</p>
   </footer>
-
 </body>
 </html>
